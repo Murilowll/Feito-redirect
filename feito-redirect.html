@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baixar App</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/android/i.test(ua)) {
+        // 👉 Link da Google Play
+        window.location.href = "https://play.google.com/store/apps/details?id=com.app.feito&hl=pt_BR";
+      } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+        // 👉 Link da App Store
+        window.location.href = "https://apps.apple.com/br/app/feito/id1382707748";
+      } else {
+        // 👉 Fallback: página do seu site ou outra landing page
+        window.location.href = "https://play.google.com/store/apps/details?id=com.app.feito&hl=pt_BR";
+      }
+    });
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #f7f7f7;
+    }
+    .msg {
+      text-align: center;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="msg">
+    <h1>Redirecionando para a loja...</h1>
+    <p>Se não acontecer automaticamente, <a href="https://seusite.com/app">clique aqui</a>.</p>
+  </div>
+</body>
+</html>
